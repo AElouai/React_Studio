@@ -1,0 +1,39 @@
+{
+  "name": "ReactCatalog",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "start": "sui-studio start",
+    "phoenix": "rm -Rf node_modules && npm i && sui-studio clean-modules && sui-studio run-all npm i",
+    "deploy": "sui-deploy ReactCatalog --now",
+    "co": "sui-studio commit",
+    "lint:js": "sui-lint js",
+    "lint:sass": "sui-lint sass",
+    "lint": "npm run lint:js && npm run lint:sass",
+    "commitmsg": "validate-commit-msg",
+    "precommit": "sui-precommit run",
+    "generate": "sui-studio generate --prefix sui --scope ReactCatalog"
+  },
+  "repository": {},
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@s-ui/deploy": "1",
+    "@s-ui/precommit": "2",
+    "@s-ui/studio": "4",
+    "husky": "0.13.4",
+    "validate-commit-msg": "2.12.2"
+  },
+  "dependencies": {},
+  "config": {
+    "sui-mono": {
+      "packagesFolder": "./components",
+      "deepLevel": 2
+    },
+    "validate-commit-msg": {
+      "types": "@s-ui/mono/src/types"
+    }
+  }
+}
